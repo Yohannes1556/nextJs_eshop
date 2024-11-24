@@ -34,8 +34,9 @@ export type SelectedImgType = {
 const Horizontal = () => {
   return <hr className="w-[30%] my-2" />;
 };
-const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
-  const { handleAddProductToCart, cartProducts } = useCart();
+const ProductDetails:React.FC<ProductDetailsProps> = ({ product }) => {
+  // if (!product) return null;
+  const { handleAddProductToCart, cartProducts, cartTotalQty } = useCart();
   const [isProductInCart, setIsProductInCart] = useState(false);
   const [cartProduct, setCartProduct] = useState<CartProductType>({
     id: product.id,
@@ -50,7 +51,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
   const router = useRouter();
 
-  console.log(cartProducts);
+
 
   useEffect(() => {
     setIsProductInCart(false);
@@ -111,7 +112,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           {product.category}
         </div>
         <div className="font-semibold">
-          <span>bRAND:</span>
+          <span>BRAND:</span>
           {product.brand}
         </div>
 
