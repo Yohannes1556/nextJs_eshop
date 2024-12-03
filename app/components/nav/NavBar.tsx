@@ -3,7 +3,7 @@ import Container from "../Container";
 import { Redressed } from "next/font/google";
 import CartCount from "./CartCount";
 
-const redressed = Redressed({subsets: ['latin'], weight: ['400']})
+const redressed = Redressed({subsets: ['latin'], weight: ['400'], display: "swap"})
 
 const NavBar = () => {
   return (
